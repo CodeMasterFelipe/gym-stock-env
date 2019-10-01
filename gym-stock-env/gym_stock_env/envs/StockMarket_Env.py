@@ -68,7 +68,9 @@ class StockMarketEnv_Train(gym.Env):
         self.current_state = None
 
     def init(self, df):
+        print('before setting up with trader')
         self.trader = StockMarket_Comm(df)
+        print('after set up')
 
         self.df = df
         self.raw_sequential_data = deque(maxlen=SEQ_LEN)
